@@ -1,0 +1,17 @@
+{% extends 'music/base.html' %}
+{% block title%} JFMusic {% endblock %}
+{% block body %}
+
+<div class="albums-container container-fluid">
+        <ul>
+            {%  for album in all_album %}
+                <li>
+                    <a href="{% url 'music:detail' album.id %}">{{album.album_title}} - {{album.artist}}</a>
+                </li>
+            {% endfor %}
+        </ul>
+</div>
+{% endblock %}
+
+
+
